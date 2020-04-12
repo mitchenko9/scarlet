@@ -8,7 +8,7 @@ const axios = require('axios');
 //Настройки
 console.log('Задаю настройки');
 const yandexToken = 'AgAAAAAM3LnQAAY8G8i61maNgU0QmOmjBh5UNxA';
-const gitToken = '59200544e9a357a6e1242c11b7405632d7edf915';
+const gitToken = 'f9bdd6992b1fcc00250502b2f4467d4cb390c4f4';
 const asistentScarlet = 'antamansid';
 const orgId = 3586882;
 //==============================
