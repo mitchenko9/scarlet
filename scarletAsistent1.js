@@ -76,8 +76,8 @@ let gitdDecipher = crypto.createDecipher(code, key);
 let yandexToken = yandDecipher.update(yandexHashToken, codeStand, codeSymb);
 yandexToken += yandDecipher.final(codeSymb);
 
-let gitToket = gitdDecipher.update(gitHashToken, codeStand, codeSymb);
-gitToket += gitdDecipher.final(codeSymb);
+let gitToken = gitdDecipher.update(gitHashToken, codeStand, codeSymb);
+gitToken += gitdDecipher.final(codeSymb);
 //==============================
 
 //Задача:
