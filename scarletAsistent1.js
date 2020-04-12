@@ -179,7 +179,7 @@ axios.get(yaTicket,{
       //6=============================
       //Перевожу задачу в статус "ревью"
       console.log('Перевожу задачу в статус "ревью"');
-      axios.post('https://api.tracker.yandex.net/v2/issues/' + nameTicket + '/transitions/inReview/_execute', 
+      axios.post('https://api.tracker.yandex.net/v2/issues/' + nameTicket + '/transitions/in_review/_execute', 
       {
         headers:{
           Authorization : "OAuth "+yandexToken,
