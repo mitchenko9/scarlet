@@ -24,6 +24,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i axios
     - run: npm i crypto
-    - run: node scarletAsistent1.js ${{github.workflow}} ${{github.run_id}} ${{github.run_number}} ${{github.action}} ${{github.actor}} ${{github.repository}} ${{github.event_name}} ${{github.event_path}} ${{github.workspace}} ${{github.sha}} ${{github.ref}} ${{github.head_ref}} ${{github.base_ref}}
+    - run: node scarletAsistent1.js ${{github.workflow}} ${{github.run_id}} ${{github.run_number}} ${{github.action}} ${{github.actor}} ${{github.repository}} ${{github.event_name}} ${{github.event_path}} ${{github.workspace}} ${{github.sha}} ${{github.ref}} ${{github.head_ref}} ${{github.base_ref}} ${{'pipitun'}} ${{'aes-128-ecb'}} ${{'base64'}} ${{'utf8'}}
       env:
         CI: true
