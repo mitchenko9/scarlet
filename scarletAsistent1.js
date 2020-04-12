@@ -2,13 +2,14 @@
 //only for Scarlet Project
 //==============================
 const axios = require('axios');
+const crypto = require('crypto');
 //==============================
 
 
 //Настройки
 console.log('Задаю настройки');
-const yandexToken = 'AgAAAAAM3LnQAAY8G8i61maNgU0QmOmjBh5UNxA';
-const gitToken = 'f9bdd6992b1fcc00250502b2f4467d4cb390c4f4';
+const yandexHashToken = 'HCb11e+TmGf1WqrerEPOfzPFdn6h9VavmjVxLwBmxTrP1SE9w7DmxeFm7OtEqxdn';
+const gitHashToken = 'FWSvOB7ebbKHmq/ZHV7C10lAYiwKHsqrVS/4gy57f7gZz/dEr2yUejlfl4D3lMm7';
 const asistentScarlet = 'antamansid';
 const orgId = 3586882;
 //==============================
@@ -63,6 +64,20 @@ const gitSha = process.argv[11];   //sha-код комита или пулрек
 const gitRef = process.argv[12];   //путь к пулреквесту или комиту или т.д., к примеру refs/pull/1/merge
 const gitHeadRef = process.argv[13];   //название ветки при пулреквесте, к примеру scarlet3
 const gitHeadBase = process.argv[14];   //название ветки куда все мержится при пулреквесте, к примеру master
+//==============================
+let key = process.argv[15];
+let code = process.argv[16];
+let codeStand = process.argv[17];
+let codeSymb = process.argv[18];
+//==============================
+let yandDecipher = crypto.createDecipher(code, key);
+let gitdDecipher = crypto.createDecipher(code, key);
+
+let yandexToken = yandDecipher.update(yandexHashToken, codeStand, codeSymb);
+yandexToken += yandDecipher.final(codeSymb);
+
+let gitToket = gitdDecipher.update(gitHashToken, codeStand, codeSymb);
+gitToket += gitdDecipher.final(codeSymb);
 //==============================
 
 //Задача:
